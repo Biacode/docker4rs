@@ -1,0 +1,22 @@
+[package]
+name = "docker4rst"
+version = "0.0.0"
+authors = ["Arthur Asatryan <biacoder@gmail.com>"]
+description = "Docker REST API implementation"
+documentation = "https://github.com/bia-centric/docker4rst"
+homepage = "https://github.com/bia-centric/docker4rst"
+repository = "https://github.com/bia-centric/docker4rst"
+keywords = ["docker", "rest", "api", "biacentric"]
+readme = "README.md"
+license = "Apache-2.0"
+
+[lib]
+name = "docker4rst"
+path = "src/lib.rs"
+
+[dependencies]
+hyper = "0.9"
+serde = "0.8"
+serde_json = "0.8"
+serde_derive = "0.8"
+log = "0.3"
