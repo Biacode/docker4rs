@@ -9,6 +9,9 @@ repository = "https://github.com/bia-centric/docker4rst"
 keywords = ["docker", "rest", "api", "biacentric"]
 readme = "README.md"
 license = "Apache-2.0"
+exclude = [
+    ".travis.yml",
+]
 
 [lib]
 name = "docker4rst"
