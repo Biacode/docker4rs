@@ -22,7 +22,7 @@ impl DockerCredentials {
 }
 
 #[cfg(test)]
-mod trests {
+mod tests {
     use super::{DockerCredentials};
 
     #[test]
