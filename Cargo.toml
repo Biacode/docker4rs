@@ -20,3 +20,6 @@ name = "docker4rs"
 path = "src/lib.rs"
 
 [dependencies]
+
+[workspace]
+members = ["docker4rs-core", "docker4rs-tcp"]
