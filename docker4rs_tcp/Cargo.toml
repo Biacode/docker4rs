@@ -1,7 +1,11 @@
 [package]
-name = "docker4rs-core"
-version = "0.1.0"
+name = "docker4rs-tcp"
+version = "0.0.1"
 authors = ["Arthur Asatryan <biacoder@gmail.com>"]
 workspace = "../"
+
+[lib]
+name = "docker4rs_tcp"
+path = "src/lib.rs"
 
 [dependencies]
