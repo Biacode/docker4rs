@@ -9,3 +9,4 @@ name = "docker4rs_tcp"
 path = "src/lib.rs"
 
 [dependencies]
+docker4rs-core = { path = "../docker4rs-core" }
