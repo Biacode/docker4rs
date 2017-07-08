@@ -13,6 +13,7 @@ exclude = [
     ".travis.yml",
     ".gitignore",
 ]
+publish = false
 
 [lib]
 name = "docker4rs"
