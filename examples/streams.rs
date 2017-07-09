@@ -10,9 +10,7 @@ fn main() {
     let mut core = Core::new().unwrap();
     let address = "0.0.0.0:12345".parse().unwrap();
     let listener = TcpListener::bind(&address, &core.handle()).unwrap();
-
     let connections = listener.incoming();
-
     let handle = core.handle().clone();
     let server = connections.for_each(|(socket, _peer_addr)| {
         use futures::Future;
