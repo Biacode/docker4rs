@@ -1,0 +1,12 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug",
+      "type": "lldb-mi",
+      "request": "launch",
+      "target": "${workspaceRoot}/target/debug/examples/proto_db",
+      "cwd": "${workspaceRoot}"
+    }
+  ]
+}
