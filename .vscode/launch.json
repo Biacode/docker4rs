@@ -5,7 +5,7 @@
       "name": "Debug",
       "type": "lldb-mi",
       "request": "launch",
-      "target": "${workspaceRoot}/target/debug/examples/proto_db",
+      "target": "${workspaceRoot}/target/debug/docker4rs",
       "cwd": "${workspaceRoot}"
     }
   ]

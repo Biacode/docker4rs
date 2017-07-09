@@ -39,7 +39,7 @@ impl Service for Server {
     type Request = Request;
     type Response = Response;
     type Error = io::Error;
-    type Future = BoxFuture<Response, io::Error>;
+    type Future = BoxFuture<Response, Self::Error>;
 
     fn call(&self, req: Request) -> Self::Future {
         assert_eq!(req.path(), "/db");
