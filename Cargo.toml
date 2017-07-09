@@ -20,17 +20,35 @@ name = "docker4rs"
 path = "src/lib.rs"
 
 [dependencies]
+# sub crates
 docker4rs-core = { path = "docker4rs-core" }
 docker4rs-tcp = { path = "docker4rs-tcp" }
+docker4rs-commons = { path = "docker4rs-commons" }
 
-bytes = "0.4"
+# futures
 futures = "0.1"
+futures-cpupool = "0.1"
+
+# tokio
 tokio-io = "0.1"
 tokio-core = "0.1"
 tokio-proto = "0.1"
 tokio-service = "0.1"
 tokio-timer = "0.1"
-futures-cpupool = "0.1"
+tokio-minihttp = { git = "https://github.com/tokio-rs/tokio-minihttp" }
+
+# db
+r2d2 = "0.7"
+r2d2_postgres = "0.11"
+
+# json
+serde = "1.0"
+serde_derive = "1.0"
+serde_json = "1.0"
+
+# misc
+rand = "0.3"
+bytes = "0.4"
 
 [workspace]
-members = ["docker4rs-core", "docker4rs-tcp"]
+members = ["docker4rs-core", "docker4rs-tcp", "docker4rs-commons"]
