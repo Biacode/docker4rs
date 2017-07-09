@@ -1,0 +1,11 @@
+[package]
+name = "docker4rs-commons"
+version = "0.1.0"
+authors = ["Arthur Asatryan <biacoder@gmail.com>"]
+workspace = "../"
+
+[lib]
+name = "docker4rs_commons"
+path = "src/lib.rs"
+
+[dependencies]

@@ -1,0 +1,12 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug",
+      "type": "lldb-mi",
+      "request": "launch",
+      "target": "${workspaceRoot}/target/debug/docker4rs",
+      "cwd": "${workspaceRoot}"
+    }
+  ]
+}

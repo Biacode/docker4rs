@@ -1,0 +1,11 @@
+[package]
+name = "docker4rs-core"
+version = "0.0.1"
+authors = ["Arthur Asatryan <biacoder@gmail.com>"]
+workspace = "../"
+
+[lib]
+name = "docker4rs_core"
+path = "src/lib.rs"
+
+[dependencies]
