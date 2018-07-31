@@ -1,16 +1,16 @@
-extern crate tokio_core;
-extern crate tokio_service;
-extern crate futures;
 extern crate bytes;
+extern crate futures;
+extern crate tokio_core;
 extern crate tokio_io;
+extern crate tokio_service;
 
-use tokio_core::reactor::Core;
-use tokio_core::net::TcpListener;
-use tokio_service::{Service, NewService};
-use tokio_io::codec::{Encoder, Decoder};
-use futures::{future, Future, Stream, Sink, BoxFuture};
 use bytes::BytesMut;
+use futures::{BoxFuture, future, Future, Sink, Stream};
 use std::str;
+use tokio_core::net::TcpListener;
+use tokio_core::reactor::Core;
+use tokio_io::codec::{Decoder, Encoder};
+use tokio_service::{NewService, Service};
 
 pub struct LineCodec;
 

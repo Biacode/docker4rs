@@ -4,14 +4,16 @@ extern crate tokio_io;
 extern crate tokio_proto;
 extern crate tokio_service;
 
+use bytes::BytesMut;
+use futures::{BoxFuture, future, Future};
 use std::io;
 use std::str;
-use bytes::BytesMut;
-use tokio_io::codec::{Encoder, Decoder};
+use tokio_io::{AsyncRead, AsyncWrite};
+use tokio_io::codec::{Decoder, Encoder};
+use tokio_io::codec::Framed;
 use tokio_proto::pipeline::ServerProto;
-use tokio_service::Service;
-use futures::{future, Future, BoxFuture};
 use tokio_proto::TcpServer;
+use tokio_service::Service;
 
 pub struct Echo;
 
@@ -34,9 +36,6 @@ impl Service for Echo {
 }
 
 pub struct LineProto;
-
-use tokio_io::{AsyncRead, AsyncWrite};
-use tokio_io::codec::Framed;
 
 impl<T: AsyncRead + AsyncWrite + 'static> ServerProto<T> for LineProto {
     /// For this protocol style, `Request` matches the `Item` type of the codec's `Encoder`

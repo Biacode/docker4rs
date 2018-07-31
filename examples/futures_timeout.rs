@@ -2,9 +2,9 @@ extern crate futures;
 extern crate futures_cpupool;
 extern crate tokio_timer;
 
-use std::time::Duration;
 use futures::Future;
 use futures_cpupool::CpuPool;
+use std::time::Duration;
 use tokio_timer::Timer;
 
 fn main() {
@@ -12,7 +12,7 @@ fn main() {
     let timer = Timer::default();
 
     // a future that resolves to Err after a timeout
-    let tim = timer.sleep(Duration::from_millis(750));
+    let _tim = timer.sleep(Duration::from_millis(750));
     let timeout = timer.sleep(Duration::from_millis(750)).then(|_| Err(()));
 
     // a future that resolves to Ok with the primality result

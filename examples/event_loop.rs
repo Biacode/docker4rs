@@ -10,7 +10,7 @@ fn main() {
     let mut core = Core::new().unwrap();
     let listener = TcpListener::bind(
         &"127.0.0.1:8080".parse().unwrap(),
-        &core.handle()
+        &core.handle(),
     ).unwrap();
     let handle = core.handle();
     let server = listener.incoming().for_each(|(client, _client_addr)| {

@@ -3,7 +3,7 @@ language: rust
 matrix:
   fast_finish: true
   include:
-    - rust: nightly
+  - rust: nightly
 #    - rust: beta
 #    - rust: stable
 
@@ -15,6 +15,6 @@ cache: cargo
 addons:
   apt:
     packages:
-      - libcurl4-openssl-dev
-      - libelf-dev
-      - libdw-dev
+    - libcurl4-openssl-dev
+    - libelf-dev
+    - libdw-dev
