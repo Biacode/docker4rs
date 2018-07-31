@@ -3,8 +3,8 @@ extern crate tokio_core;
 extern crate tokio_io;
 
 use futures::stream::Stream;
-use tokio_core::reactor::Core;
 use tokio_core::net::TcpListener;
+use tokio_core::reactor::Core;
 
 fn main() {
     let mut core = Core::new().unwrap();

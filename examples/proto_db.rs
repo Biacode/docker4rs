@@ -1,26 +1,26 @@
-#[macro_use]
-extern crate serde_derive;
+extern crate docker4rs_commons;
 extern crate futures;
 extern crate futures_cpupool;
 extern crate r2d2;
 extern crate r2d2_postgres;
 extern crate rand;
 extern crate serde;
+#[macro_use]
+extern crate serde_derive;
 extern crate serde_json;
 extern crate tokio_minihttp;
 extern crate tokio_proto;
 extern crate tokio_service;
-extern crate docker4rs_commons;
-
-use std::io;
 
 use futures::{BoxFuture, Future};
 use futures_cpupool::CpuPool;
-
-use r2d2_postgres::{TlsMode, PostgresConnectionManager};
+use r2d2::Pool;
+use r2d2_postgres::{PostgresConnectionManager, TlsMode};
 use rand::Rng;
-
+use std::io;
 use tokio_minihttp::{Request, Response};
+use tokio_minihttp::Http;
+use tokio_proto::pipeline::Pipeline;
 use tokio_proto::TcpServer;
 use tokio_service::Service;
 
@@ -84,10 +84,6 @@ fn main() {
     docker4rs_commons::type_info(&server);
     serve_db(thread_pool.clone(), db_pool.clone(), server);
 }
-
-use r2d2::Pool;
-use tokio_proto::pipeline::Pipeline;
-use tokio_minihttp::Http;
 
 fn serve_db(thread_pool: CpuPool, db_pool: Pool<PostgresConnectionManager>, server: TcpServer<Pipeline, Http>) {
     server.serve(move || {

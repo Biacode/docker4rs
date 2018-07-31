@@ -1,6 +1,5 @@
-use std::io::ErrorKind;
-
 use docker4rs_core::connection::{Connectable, Connection, ConnectionConfig};
+use std::io::ErrorKind;
 
 /// Holds the success connection
 pub struct TcpConnection {}
